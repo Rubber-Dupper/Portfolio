@@ -1,32 +1,700 @@
-&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;title&gt;Brandon | Portfolio&lt;/title&gt;
-&lt;style&gt;
-body { font-family: Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color:
-#1f2937; }
-h1, h2 { color: #1d4ed8; }
-.tag { display: inline-block; background: #dbeafe; padding: 4px 10px; border-radius: 999px; margin: 3px; }
-.project { border-left: 4px solid #1d4ed8; padding-left: 14px; margin: 18px 0; }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1&gt;Brandon&lt;/h1&gt;
-&lt;p&gt;Student, creator, and [one interest or goal].&lt;/p&gt;
-&lt;/header&gt;
-&lt;main&gt;
-&lt;h2&gt;About me&lt;/h2&gt;
-&lt;p&gt;I am interested in learning this website called Github. I am learning how to code once for all.&lt;/p&gt;
-&lt;h2&gt;Projects &amp; experiences&lt;/h2&gt;
-&lt;section class=&quot;project&quot;&gt;&lt;h3&gt;Bulding a website&lt;/h3&gt;&lt;p&gt;I have created a dash board on ArcGIS.&lt;/p&gt;&lt;/section&gt;
-&lt;section class=&quot;project&quot;&gt;&lt;h3&gt;Have done minimal python coding&lt;/h3&gt;&lt;p&gt;I have learned what is digital citizenship.&lt;/p&gt;&lt;/section&gt;
-&lt;h2&gt;Skills&lt;/h2&gt;
-&lt;p&gt;&lt;span class=&quot;tag&quot;&gt;Coding&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;Certified A+&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;Apple&lt;/span&gt;&lt;/p&gt;
-&lt;h2&gt;Connect&lt;/h2&gt;
-&lt;p&gt;Contact me through my school&lt;/p&gt;
-&lt;/main&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brandon Reyes Vargas | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --panel: #1f2937;
+      --panel-alt: #e5e7eb;
+      --text: #f8fafc;
+      --text-dark: #0f172a;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --success: #34d399;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #020817 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+      letter-spacing: -0.05em;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 1.08rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #08111f;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .profile-card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-image {
+      aspect-ratio: 4 / 5;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      font-size: 2rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      letter-spacing: 0.12em;
+    }
+
+    .profile-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding-top: 1rem;
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .meta-item strong {
+      color: var(--text);
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .about-grid,
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .facts {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .fact {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-card, .project-card, .timeline-item, .edu-card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3, .project-card h3, .edu-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: 0.45rem 0.7rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .mini-link {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0.8rem;
+      top: 1.4rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.15);
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .timeline-item h3, .edu-card h3 {
+      margin: 0 0 0.35rem;
+    }
+
+    .timeline-item p, .edu-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(167,139,250,0.1));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-box h3 {
+      margin: 0 0 0.3rem;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+    }
+
+    .contact-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+      }
+      .logo {
+        font-size: 1rem;
+      }
+      .btn-row {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .contact-box {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#top" class="logo">Brandon</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Student</div>
+          <h1>Hello, I'm <span class="highlight">Brandon</span></h1>
+          <p class="subtitle">
+            I am a Web Developer passionate about Cloud Computing. I build creative solutions, solve problems with purpose,
+            and turn ideas into meaningful work.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#projects">View My Work</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-image">BR</div>
+          <div class="profile-meta">
+            <div class="meta-item"><span>Location</span><strong>California, USA</strong></div>
+            <div class="meta-item"><span>Available</span><strong>Open to Work</strong></div>
+            <div class="meta-item"><span>Email</span><strong>reyesvargasbg7656@sbcusd.com</strong></div>
+            <div class="meta-item"><span>Focus</span><strong>Cloud Computing & Web Development</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-intro">
+          I am a student with a strong interest in Computer Science. I enjoy learning, creating, and applying practical solutions to real-world challenges.
+        </p>
+
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              I am currently a fourth-year student at Aviation Academy, where I am developing my skills in Computer Literacy,
+              Developing Websites, and Troubleshooting. My work combines creativity, technical thinking, and problem-solving to create work that is both useful and engaging.
+            </p>
+          </div>
+
+          <div class="facts">
+            <div class="fact">
+              <strong>Focus</strong>
+              Reparing hardware issues
+            </div>
+            <div class="fact">
+              <strong>Interests</strong>
+              Networking, Hardware, Coding
+            </div>
+            <div class="fact">
+              <strong>Goal</strong>
+              To contribute efficiency
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-intro">
+          I have developed skills in the following areas through coursework, projects, and hands-on experience.
+        </p>
+
+        <div class="grid-3">
+          <div class="skill-card">
+            <h3>Technical Skills</h3>
+            <p>
+              Troubleshooting, communications, organization, networking, computer literacy, website development.
+            </p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Networking</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Creative Skills</h3>
+            <p>
+              Communication, design, storytelling, visual thinking, and creating solutions that connect with people.
+            </p>
+            <div class="tags">
+              <span class="tag">UI Design</span>
+              <span class="tag">Branding</span>
+              <span class="tag">Problem Solving</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Professional Skills</h3>
+            <p>
+              Collaboration, project planning, research, presentation, time management, and adaptability.
+            </p>
+            <div class="tags">
+              <span class="tag">Leadership</span>
+              <span class="tag">Research</span>
+              <span class="tag">Teamwork</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-intro">
+          These projects reflect my work, interests, and ability to solve problems creatively and effectively.
+        </p>
+
+        <div class="grid-2">
+          <article class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>
+              I designed and built this personal portfolio website to present my skills, projects, and professional interests in a clear and polished way.
+            </p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Web Design</span>
+            </div>
+            <div class="project-links">
+              <a class="mini-link" href="#top">Live Demo</a>
+              <a class="mini-link" href="#contact">Contact</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Tech Support & Troubleshooting Projects</h3>
+            <p>
+              This work focuses on practical technology support, hardware troubleshooting, and improving system reliability through careful diagnosis and problem-solving.
+            </p>
+            <div class="tags">
+              <span class="tag">IT Support</span>
+              <span class="tag">Hardware</span>
+              <span class="tag">Troubleshooting</span>
+            </div>
+            <div class="project-links">
+              <a class="mini-link" href="#experience">Case Study</a>
+              <a class="mini-link" href="#skills">Skills</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Cloud & Digital Skills Learning</h3>
+            <p>
+              I developed my understanding of digital tools and cloud-focused concepts by learning how technology systems work together to support efficient and reliable solutions.
+            </p>
+            <div class="tags">
+              <span class="tag">Cloud</span>
+              <span class="tag">Learning</span>
+              <span class="tag">Technology</span>
+            </div>
+            <div class="project-links">
+              <a class="mini-link" href="#about">Learn More</a>
+              <a class="mini-link" href="#contact">Connect</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Student Technology Initiatives</h3>
+            <p>
+              This project reflects my ability to apply technical knowledge in practical settings, focusing on efficiency, communication, and building useful digital experiences.
+            </p>
+            <div class="tags">
+              <span class="tag">Efficiency</span>
+              <span class="tag">Research</span>
+              <span class="tag">Learning</span>
+            </div>
+            <div class="project-links">
+              <a class="mini-link" href="#education">Education</a>
+              <a class="mini-link" href="#contact">Contact</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-intro">
+          My experience has helped me strengthen both my technical skills and my ability to work effectively in teams and projects.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2023 – Present</div>
+            <h3>Student Technology Learner</h3>
+            <p><strong>Aviation Academy</strong></p>
+            <p>
+              I have developed skills in computer literacy, website development, and troubleshooting while strengthening my understanding of networking and technical support.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024 – Present</div>
+            <h3>School-Based Tech and Support Projects</h3>
+            <p><strong>Academic and Personal Projects</strong></p>
+            <p>
+              I support technology-related learning activities, improve practical problem-solving skills, and work on projects that build both technical understanding and communication ability.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024 – Present</div>
+            <h3>Student Developer & Problem Solver</h3>
+            <p><strong>Independent Projects</strong></p>
+            <p>
+              I focus on building digital work, learning through structured projects, and developing useful solutions that improve efficiency and support real-world needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="grid-2">
+          <div class="edu-card">
+            <h3>Fourth-Year Student</h3>
+            <p><strong>Aviation Academy</strong></p>
+            <p>2023 – Present</p>
+            <p>Relevant coursework: Computer Literacy, Website Development, Troubleshooting, Networking, Digital Technology</p>
+          </div>
+
+          <div class="edu-card">
+            <h3>Technology & Computer Skills Development</h3>
+            <p><strong>Self-directed and Academic Learning</strong></p>
+            <p>Ongoing</p>
+            <p>Focus areas: Web development, cloud computing, hardware support, communication, and problem solving</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h3>Let's Connect</h3>
+            <p>
+              I’m open to opportunities, collaborations, and conversations about web development, cloud computing, and technology support.
+            </p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="mailto:reyesvargasbg7656@sbcusd.com">Email Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Brandon Reyes Vargas | All rights reserved
+    </div>
+  </footer>
+</body>
+</html>
